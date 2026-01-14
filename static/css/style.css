@@ -1,0 +1,75 @@
+.body{
+    background-color: #ff5a5f;
+}
+
+.content{
+    background-color: #ced1cb9a;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+input{
+    width: 40px;
+    padding: 3px;
+    border-radius: 5px;
+    border: none;
+}
+
+.slider{
+    width: max-content;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    height: 15px; /* Specified height */
+    background: #00a699; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  border-radius: 50%;
+  background: #008378; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #008378; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.title{
+    color: #ffffff;
+}
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+}
+
+.custom-btn{
+    background-color: #ff5a5f;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color:#00a699;
+}
+

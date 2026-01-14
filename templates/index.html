@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airbnb Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body class="body">
+<div class="container content my-4">
+    <h1 class="text-center p-3 m-2 raleway title">Airbnb Price Prediction</h1>
+    <div class="row p-3 m-3 justify-content-center">
+        <div class="col-4">
+            <label class="my-2">Number of people:</label>
+            <input type="number" id="person_capacity" min="1" value="2"><br>
+
+            <label class="my-2">Number of bedrooms:</label>
+            <input type="number" id="bedrooms" min="0" value="1"><br>
+
+            <label class="my-2">Room type:</label>
+            <select id="room_type">
+                <option value="private">Private room</option>
+                <option value="shared">Shared room</option>
+                <option value="entire">Entire home/apt</option>
+            </select><br>
+
+            <label class="my-2">City:</label>
+            <select id="city">
+                <option value="amsterdam">Amsterdam</option>
+                <option value="athens">Athens</option>
+                <option value="barcelona">Barcelona</option>
+                <option value="berlin">Berlin</option>
+                <option value="budapest">Budapest</option>
+                <option value="lisbon">Lisbon</option>
+                <option value="london">London</option>
+                <option value="paris">Paris</option>
+                <option value="rome">Rome</option>
+                <option value="vienna">Vienna</option>
+            </select><br>
+
+            <label class="my-2">Day type:</label>
+            <select id="is_weekend">
+                <option value="0">Weekday</option>
+                <option value="1">Weekend</option>
+            </select><br>
+        </div>
+        <div class="col-4">
+            <label>
+                <input type="checkbox" id="superhost">
+                Host is superhost
+            </label><br>
+
+            <label>
+                <input type="checkbox" id="business">
+                Business trip 
+            </label><br>
+
+            <label>
+                <input type="checkbox" id="multi">
+                Multiple rooms
+            </label><br>
+
+            <label class="my-2">Cleanliness rating:</label><br>
+            <input class="my-2 slider" type="range" id="cleanliness" min="1" max="10" value="9">
+            <span class="my-2" id="cleanliness_value">9</span><br>
+            <button class="custom-btn my-3" onclick="predict()">Predict price</button>
+
+        </div>
+    </div>
+</div>
+    <h2 class="title text-center my-3 p-2" id="result"></h2>
+
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+<script>
+    const slider = document.getElementById("cleanliness");
+    const output = document.getElementById("cleanliness_value");
+    slider.oninput = () => output.innerText = slider.value;
+</script>
+
+</body>
+</html>
